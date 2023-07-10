@@ -4,31 +4,37 @@
         if ($num1 == "" || $num2 == "" || $operacion == "") {
             echo "<p class='text-danger text-center my-3'>❌ERROR, llena todos los campos</p>";
         }else{
-            if (is_numeric($num1) && is_numeric($num1)){
+            if (is_numeric($num1) && is_numeric($num1) && $num1 > 0 && $num2 > 0){
                 echo "<p class='text-success text-center my-3'>✅CORRECTO, campos llenados correctamente</p>";
                 return true ;
             }  else{
-                echo "<p class='text-danger text-center my-3'>❌ERROR, los campos num1 y num2 deben ser numéricos</p>";
+                echo "<p class='text-danger text-center my-3'>❌ERROR, los campos num1 y num2 deben ser números postivos</p>";
             }
         }
     }
 
+    // FUNCIONES DE LAS OPERACIONES
+    function sum($num1, $num2){ return $num1 + $num2; }
+    function res($num1, $num2){ return $num1 - $num2; }
+    function mul($num1, $num2){ return $num1 * $num2;}
+    function div($num1, $num2){ return $num1 / $num2; }
+
     // FUNCIÓN PARA DEFINIR OPERACIÓN DEPENDIENDO LO ESCOGIDO
     function operacion($num1, $num2, $operacion){
         if($operacion == 'sumar'){
-            return $num1 + $num2;
+            return sum($num1, $num2);
         }
 
         if($operacion == 'restar'){
-            return $num1 - $num2;
+            return res($num1, $num2);
         }
 
         if($operacion == 'multiplicar'){
-            return $num1 * $num2;
+            return mul($num1, $num2);
         }
 
         if($operacion == 'dividir'){
-            return $num1 / $num2;
+            return div($num1, $num2);
         }
         
     }
