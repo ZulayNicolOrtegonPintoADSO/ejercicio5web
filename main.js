@@ -6,8 +6,6 @@ const num2 = document.getElementById('num2');
 
 const operaciones = document.getElementsByName('operacion');
 
-let rta = 0;
-
 const soloNumeros = (e) => {
 
     if ( e.keyCode < 48 || e.keyCode > 57 && e.keyCode) {
@@ -19,10 +17,11 @@ const enviarFormulario = formulario => {
     formulario.submit()
 }
 
-const suma = (num1 , num2) => { rta = num1 + num2 }
-const resta = (num1 , num2) => { rta = num1 + num2 }
-const multiplicacion = (num1 , num2) => { rta = num1 + num2 }
-const division = (num1 , num2) => { rta = num1 + num2 }
+const suma = (n1 , n2) => { return n1 + n2 }
+
+const resta = (n1 , n2) => { return n1 - n2 }
+const multiplicacion = (n1 , n2) => { return n1 * n2 }
+const division = (n1 , n2) => { return  n1 / n2 }
 
 const validacion = (e) => {
     e.preventDefault()
@@ -53,21 +52,23 @@ const validacion = (e) => {
     }
 
     else{
+        let n1  = parseFloat(num1.value);
+        let n2  = parseFloat(num2.value);
 
         if(seleccionoperacion === "sumar"){
-            console.log(`El resultado de la suma es: ${suma (num1 , num2)}`);  
+            console.log(`El resultado de la suma es: ${suma (n1 , n2)}`);  
         }
 
         if(seleccionoperacion === "restar"){
-            console.log(`El resultado de la resta es: ${resta (num1 , num2)}`);  
+            console.log(`El resultado de la resta es: ${resta (n1 , n2)}`);  
         }
 
         if(seleccionoperacion === "multiplicar"){
-            console.log(`El resultado de la multiplicación es: ${multiplicacion (num1 , num2)}`);  
+            console.log(`El resultado de la multiplicación es: ${multiplicacion (n1 , n2)}`);  
         }
 
         if(seleccionoperacion === "dividir"){
-            console.log(`El resultado de la división es: ${division (num1 , num2)}`);  
+            console.log(`El resultado de la división es: ${division (n1 , n2)}`);  
         }
         
 
