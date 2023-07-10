@@ -64,7 +64,7 @@
                 
                 <!-- BOTÓN PARA ENVIAR EL FORMULARIO -->
                 <div class="col-md-12  d-flex justify-content-center my-3">
-                     <input type="submit" class="form-control bg-warning" value="CALCULAR">
+                     <input type="submit" class="form-control bg-warning" value="CALCULAR" id="btnEnviar">
                 </div>
 
             </form>
@@ -83,5 +83,6 @@
 
     <marquee class="text-light fs-5 fst-italic"> Realizado por Zulay Ortegon de la ficha ADSO 2500845</marquee>
     
+    <script src="main.js"></script>
 </body>
 </html>
